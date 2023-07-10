@@ -1,9 +1,10 @@
 import { useCalendarStore, useUiStore } from "../../hooks"
 
 
+
 export const FabDelete = () => {
 
-    
+    const { isDateModalOpen } = useUiStore();
     const { startDeletingEvent, hasEventSelected } = useCalendarStore();
 
     const handleDelete = () => {
@@ -18,7 +19,7 @@ export const FabDelete = () => {
         className="btn btn-danger fab-danger"
         onClick={ handleDelete }
         style={{ 
-            display: hasEventSelected ? '' : 'none'
+            display: hasEventSelected && !isDateModalOpen ? '' : 'none'
         }}
     >
         <i className="fas fa-trash-alt"></i>

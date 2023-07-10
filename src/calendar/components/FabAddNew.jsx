@@ -9,6 +9,8 @@ export const FabAddNew = () => {
 
     const handleClickNew = () => {
 
+        
+
         setActiveEvent({
             title: '',
             notes: '',
@@ -21,6 +23,7 @@ export const FabAddNew = () => {
             }
         })
         openDateModal();
+        
     }
     
 
