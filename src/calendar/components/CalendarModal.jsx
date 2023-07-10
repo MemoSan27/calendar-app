@@ -66,7 +66,7 @@ export const CalendarModal = () => {
         console.log(formValues);
 
         //TODO: 
-        // remover errores en pantalla
+        // Remover errores en pantalla
         //cerrar modal
 
     }
