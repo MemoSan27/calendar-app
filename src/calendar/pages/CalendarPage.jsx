@@ -45,6 +45,7 @@ export const CalendarPage = () => {
 
   const onViewChanged = (event) => {
     localStorage.setItem('lastView', event);
+    setLastView( event );
   }
 
   useEffect(() => {
