@@ -1,22 +1,26 @@
-import calendarApi from "../../src/api/calendarApi";
+import calendarApi from '../../src/api/calendarApi';
 
-describe('Pruebas en CalendarApi', () => { 
 
-    test('Debe de tener la configuracion por defecto', () => { 
-        
-        //console.log(calendarApi);
-        
-        expect( calendarApi.defaults.baseURL ).toBe( process.env.VITE_API_URL )
+
+describe('Pruebas en el CalendarApi', () => {
     
-     });
+    test('debe de tener la configuración por defecto', () => {
 
-    test('Debe de tener el x-token en el header de todas las peticiones', async() => { 
+        // console.log(calendarApi);
+        // console.log(process.env)
+        expect( calendarApi.defaults.baseURL ).toBe( process.env.VITE_API_URL );
+    
+    });
 
-        localStorage.setItem('token', 'ABC-123-XYZ');
-        const res = await calendarApi.get('/auth');
+     test('debe de tener el x-token en el header de todas las peticiones ', async() => {
 
-        console.log(res);
+        const token = 'ABC-123-XYZ';
+        localStorage.setItem('token', token );
+        const res = await calendarApi.get('/auth').then( res => res ).catch( res => res);
 
-      });
-  
- });
+        expect(res.config.headers['x-token']).toBe( token );
+        
+
+    }); 
+
+});
