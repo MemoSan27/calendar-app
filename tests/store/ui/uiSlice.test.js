@@ -1,4 +1,4 @@
-import { onCloseDateModal, onOpenDateModal, uiSlice } from "../../../10-calendar/src/store/ui/uiSlice";
+import { onCloseDateModal, onOpenDateModal, uiSlice } from "../../../src/store/ui/uiSlice";
 
 
 describe('Pruebas en uiSlice', () => {

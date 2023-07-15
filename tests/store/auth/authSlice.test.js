@@ -1,6 +1,6 @@
-import { authSlice, clearErrorMessage, onChecking, onLogin, onLogout } from "../../src/store/auth/authSlice";
-import { authenticatedState, initialState } from "../fixtures/authState";
-import { testUserCredentials } from "../fixtures/testUser";
+import { authSlice, clearErrorMessage, onChecking, onLogin, onLogout } from "../../../src/store/auth/authSlice";
+import { authenticatedState, initialState } from "../../fixtures/authState";
+import { testUserCredentials } from "../../fixtures/testUser";
 
 
 describe('Pruebas en authSlice', () => {
