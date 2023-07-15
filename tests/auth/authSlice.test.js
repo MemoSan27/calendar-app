@@ -1,4 +1,4 @@
-import { authSlice, clearErrorMessage, onLogin, onLogout } from "../../src/store/auth/authSlice";
+import { authSlice, clearErrorMessage, onChecking, onLogin, onLogout } from "../../src/store/auth/authSlice";
 import { authenticatedState, initialState } from "../fixtures/authState";
 import { testUserCredentials } from "../fixtures/testUser";
 
@@ -53,9 +53,22 @@ describe('Pruebas en authSlice', () => {
         const newState = authSlice.reducer( state, clearErrorMessage());
                 
         expect(newState.errorMessage).toBe( undefined );
-        
-         
+             
     });
+
+    test('Debe de realizar el checking', () => {
+        const state = authSlice.reducer( authenticatedState, onChecking());
+        
+        expect(state).toEqual({ 
+             status: 'checking', 
+             user: {},
+             errorMessage: undefined,
+        })
+                
+        
+             
+    });
+
 
 
     

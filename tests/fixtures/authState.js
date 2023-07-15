@@ -1,6 +1,6 @@
 
 export const initialState = {
-        status: 'checking', // 'authenticated', 'not-authenticated'
+        status: 'checking', 
         user: {},
         errorMessage: undefined,
 }
